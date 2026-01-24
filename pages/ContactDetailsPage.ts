@@ -16,4 +16,5 @@ export class ContactDetailsPage {
         this.returnToContactListButton = this.page.locator("#return");
         this.logoutButton = this.page.locator("#logout");
     }
+    
 }

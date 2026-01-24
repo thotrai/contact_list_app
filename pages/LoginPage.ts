@@ -14,7 +14,13 @@ export class LoginPage {
         this.passwordInput = this.page.locator("#password");
         this.submitButton = this.page.locator("#submit");
         this.signupButton = this.page.locator("#signup");
-        this. errorMessage = this.page.locator("#error");
+        this.errorMessage = this.page.locator("#error");
     }
-    
+
+    async login(email: string, password: string) {
+        await this.emailInput.fill(email);
+        await this.passwordInput.fill(password);
+        await this.submitButton.click();
+    }
+
 }
