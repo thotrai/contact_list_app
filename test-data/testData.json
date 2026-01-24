@@ -1,0 +1,16 @@
+{
+    "validUser": {
+        "firstName": "Thodoris",
+        "lastName": "Tester",
+        "email": "thodoris@gmail.com",
+        "password": "Test123",
+        "birthdate": "1998-01-17",
+        "phone": "0123456789",
+        "streetAddress1": "Random Street",
+        "streetAddress2": "Apt 2B",
+        "city": "Thessaloniki",
+        "stateOfProvince": "SKG",
+        "postalCode": "2310",
+        "country": "Greece"
+    }
+}
