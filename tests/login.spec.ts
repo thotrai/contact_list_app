@@ -11,5 +11,4 @@ test('Verify error messgae for incorrect username or password.', async ({ page }
   await loginPage.passwordInput.fill(user.password);
   await loginPage.submitButton.click();
   await expect(loginPage.errorMessage).toBeVisible();
-
 });

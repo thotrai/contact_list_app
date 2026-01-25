@@ -3,32 +3,43 @@ import { LoginPage } from '../pages/LoginPage';
 import testData from '../test-data/testData.json';
 import { ContactListPage } from '../pages/ContactListPage';
 import { AddContactPage } from '../pages/AddContactPage';
+import { createUserViaAPI } from '../utils/apiHelpers';
+import { generateRandomUser } from '../utils/helperFunctions';
 
-test('Add a new contact and verify that the contact is displayed.', async ({ page }) => {
-  const loginPage = new LoginPage(page);
-  const contactListPage = new ContactListPage(page);
-  const addContactPage = new AddContactPage(page);
+test.describe('Contact List flows.', () => {
+    let user: ReturnType<typeof generateRandomUser>;
 
-  await page.goto('');
-  await loginPage.login(testData.validUser.email, testData.validUser.password);
-  await contactListPage.expectPageToBeVisible();
-  await contactListPage.addContactButton.click();
-  await addContactPage.expectPageToBeVisible();
-  await addContactPage.addContact(testData.validUser.firstName, testData.validUser.lastName, testData.validUser.birthdate, testData.validUser.email, testData.validUser.phone, testData.validUser.streetAddress1, testData.validUser.streetAddress2, testData.validUser.city, testData.validUser.stateOfProvince, testData.validUser.postalCode, testData.validUser.country);
-  await contactListPage.expectAddedContactToBeVisible(testData.validUser.firstName, testData.validUser.lastName, testData.validUser.birthdate, testData.validUser.email, testData.validUser.phone, testData.validUser.streetAddress1, testData.validUser.streetAddress2, testData.validUser.city, testData.validUser.stateOfProvince, testData.validUser.postalCode, testData.validUser.country);
+    test.beforeEach('Test data setup via API.', async ({ request }) => {
+        user = generateRandomUser();
+        await createUserViaAPI(request, user);
+    });
 
-});
+    test('Add a new contact and verify that the contact is displayed.', async ({ page }) => {
+        const loginPage = new LoginPage(page);
+        const contactListPage = new ContactListPage(page);
+        const addContactPage = new AddContactPage(page);
 
-test('Verify error message for missing requierd fields.', async ({ page }) => {
-  const loginPage = new LoginPage(page);
-  const contactListPage = new ContactListPage(page);
-  const addContactPage = new AddContactPage(page);
+        await page.goto('');
+        await loginPage.login(user.email, user.password);
+        await contactListPage.expectPageToBeVisible();
+        await contactListPage.addContactButton.click();
+        await addContactPage.expectPageToBeVisible();
+        await addContactPage.addContact(user.firstName, user.lastName, testData.contactDetails.birthdate, user.email, testData.contactDetails.phone, testData.contactDetails.streetAddress1, testData.contactDetails.streetAddress2, testData.contactDetails.city, testData.contactDetails.stateOfProvince, testData.contactDetails.postalCode, testData.contactDetails.country);
+        await contactListPage.expectAddedContactToBeVisible(user.firstName, user.lastName, testData.contactDetails.birthdate, user.email, testData.contactDetails.phone, testData.contactDetails.streetAddress1, testData.contactDetails.streetAddress2, testData.contactDetails.city, testData.contactDetails.stateOfProvince, testData.contactDetails.postalCode, testData.contactDetails.country);
+    });
 
-  await page.goto('');
-  await loginPage.login(testData.validUser.email, testData.validUser.password);
-  await contactListPage.expectPageToBeVisible();
-  await contactListPage.addContactButton.click();
-  await addContactPage.expectPageToBeVisible();
-  await addContactPage.submitButton.click();
-  await expect(addContactPage.errorMessage).toBeVisible();
+    test('Verify error message for missing requierd fields.', async ({ page }) => {
+        const loginPage = new LoginPage(page);
+        const contactListPage = new ContactListPage(page);
+        const addContactPage = new AddContactPage(page);
+
+        await page.goto('');
+        await loginPage.login(user.email, user.password);
+        await contactListPage.expectPageToBeVisible();
+        await contactListPage.addContactButton.click();
+        await addContactPage.expectPageToBeVisible();
+        await addContactPage.submitButton.click();
+        await expect(addContactPage.errorMessage).toBeVisible();
+    });
+
 });

@@ -6,5 +6,5 @@ export function generateRandomUser() {
       lastName: `User${timestamp}`,
       email: `user-${timestamp}@mail.com`,
       password: 'Test123@'
-    }
+    };
 }
