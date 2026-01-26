@@ -24,8 +24,8 @@ test.describe('Contact List flows.', () => {
         await contactListPage.expectPageToBeVisible();
         await contactListPage.addContactButton.click();
         await addContactPage.expectPageToBeVisible();
-        await addContactPage.addContact(user.firstName, user.lastName, testData.contactDetails.birthdate, user.email, testData.contactDetails.phone, testData.contactDetails.streetAddress1, testData.contactDetails.streetAddress2, testData.contactDetails.city, testData.contactDetails.stateOfProvince, testData.contactDetails.postalCode, testData.contactDetails.country);
-        await contactListPage.expectAddedContactToBeVisible(user.firstName, user.lastName, testData.contactDetails.birthdate, user.email, testData.contactDetails.phone, testData.contactDetails.streetAddress1, testData.contactDetails.streetAddress2, testData.contactDetails.city, testData.contactDetails.stateOfProvince, testData.contactDetails.postalCode, testData.contactDetails.country);
+        await addContactPage.addContact(user.firstName, user.lastName, testData.contact.birthdate, user.email, testData.contact.phone, testData.contact.street1, testData.contact.street2, testData.contact.city, testData.contact.stateProvince, testData.contact.postalCode, testData.contact.country);
+        await contactListPage.expectAddedContactToBeVisible(user.firstName, user.lastName, testData.contact.birthdate, user.email, testData.contact.phone, testData.contact.street1, testData.contact.street2, testData.contact.city, testData.contact.stateProvince, testData.contact.postalCode, testData.contact.country);
     });
 
     test('Verify error message for missing requierd fields.', async ({ page }) => {

@@ -1,11 +1,14 @@
 {
-    "contactDetails": {
-        "birthdate": "2020-01-31",
+    "contact": {
+        "firstName": "Thodoris",
+        "lastName": "Tester",
+        "birthdate": "2020-01-30",
+        "email": "thodoris@mail.com",
         "phone": "0123456789",
-        "streetAddress1": "Random Street",
-        "streetAddress2": "Apt 2B",
+        "street1": "Random Street",
+        "street2": "Apt 2B",
         "city": "Thessaloniki",
-        "stateOfProvince": "SKG",
+        "stateProvince": "SKG",
         "postalCode": "2310",
         "country": "Greece"
     }
