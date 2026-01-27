@@ -1,14 +1,29 @@
 {
   "compilerOptions": {
+    /* Language & output */
     "target": "ESNext",
     "module": "CommonJS",
     "moduleResolution": "Node",
+    /* Type safety */
     "strict": true,
+    /* Interop & imports */
     "esModuleInterop": true,
     "resolveJsonModule": true,
+    /* Global types */
     "types": ["node", "@playwright/test"],
-    "skipLibCheck": true
+    /* Performance */
+    "skipLibCheck": true,
+    /* Path aliases */
+    "baseUrl": ".",
+    "paths": {
+      "@pages/*": ["pages/*"],
+      "@utils/*": ["utils/*"],
+      "@tests/*": ["tests/*"],
+      "@test-data/*": ["test-data/*"]
+    }
   },
+  /* Files TypeScript should read */
   "include": ["**/*.ts"],
+  /* Files TypeScript should ignore */
   "exclude": ["node_modules"]
 }

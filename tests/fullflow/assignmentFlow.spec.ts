@@ -1,10 +1,10 @@
 import { test } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
-import { SignupPage } from '../pages/SignupPage';
-import { generateRandomUser } from '../utils/helperFunctions';
-import { ContactListPage } from '../pages/ContactListPage';
-import { AddContactPage } from '../pages/AddContactPage';
-import testData from '../test-data/testData.json';
+import { LoginPage } from '@pages/LoginPage';
+import { SignupPage } from '@pages/SignupPage';
+import { generateRandomUser } from '@utils/helperFunctions';
+import { ContactListPage } from '@pages/ContactListPage';
+import { AddContactPage } from '@pages/AddContactPage';
+import testData from '@test-data/testData.json';
 
 test('Assignment full flow: signup, add contact, logout/login.', async ({ page }) => {
     const user = generateRandomUser();

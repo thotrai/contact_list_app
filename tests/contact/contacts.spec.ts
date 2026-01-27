@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
-import testData from '../test-data/testData.json';
-import { ContactListPage } from '../pages/ContactListPage';
-import { AddContactPage } from '../pages/AddContactPage';
-import { createUserViaAPI } from '../utils/apiHelpers';
-import { generateRandomUser } from '../utils/helperFunctions';
+import { LoginPage } from '@pages/LoginPage';
+import testData from '@test-data/testData.json';
+import { ContactListPage } from '@pages/ContactListPage';
+import { AddContactPage } from '@pages/AddContactPage';
+import { createUserViaAPI } from '@utils/apiHelpers';
+import { generateRandomUser } from '@utils/helperFunctions';
 
 test.describe('Contact List flows.', () => {
     let user: ReturnType<typeof generateRandomUser>;

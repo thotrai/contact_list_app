@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { generateRandomUser } from '../utils/helperFunctions';
+import { generateRandomUser } from '@utils/helperFunctions';
 
 test('Verify that the account has been created and logged in via API calls.', async ({ request }) => {
     const user = generateRandomUser();

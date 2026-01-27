@@ -1,8 +1,8 @@
 import { expect, test } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
-import { generateRandomUser } from '../utils/helperFunctions';
-import { createUserViaAPI } from '../utils/apiHelpers';
-import { ContactListPage } from '../pages/ContactListPage';
+import { LoginPage } from '@pages/LoginPage';
+import { generateRandomUser } from '@utils/helperFunctions';
+import { createUserViaAPI } from '@utils/apiHelpers';
+import { ContactListPage } from '@pages/ContactListPage';
 
 test.describe('Login flow.', () => {
     let user: ReturnType<typeof generateRandomUser>;

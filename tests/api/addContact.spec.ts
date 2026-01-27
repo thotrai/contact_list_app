@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { generateRandomUser } from '../utils/helperFunctions';
+import { generateRandomUser } from '@utils/helperFunctions';
 
 test('Add a new contact via API using Bearer token', async ({ request }) => {
   const user = generateRandomUser();

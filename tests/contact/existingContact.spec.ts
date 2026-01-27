@@ -1,9 +1,9 @@
 import { test } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
-import testData from '../test-data/testData.json';
-import { ContactListPage } from '../pages/ContactListPage';
-import { addContactViaAPI, createUserViaAPI } from '../utils/apiHelpers';
-import { generateRandomUser } from '../utils/helperFunctions';
+import { LoginPage } from '@pages/LoginPage';
+import testData from '@test-data/testData.json';
+import { ContactListPage } from '@pages/ContactListPage';
+import { addContactViaAPI, createUserViaAPI } from '@utils/apiHelpers';
+import { generateRandomUser } from '@utils/helperFunctions';
 
 test.describe('Existing Contact after logout flow.', () => {
     let user: ReturnType<typeof generateRandomUser>;

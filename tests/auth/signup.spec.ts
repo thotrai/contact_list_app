@@ -1,8 +1,8 @@
 import { test } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
-import { SignupPage } from '../pages/SignupPage';
-import { generateRandomUser } from '../utils/helperFunctions';
-import { ContactListPage } from '../pages/ContactListPage';
+import { LoginPage } from '@pages/LoginPage';
+import { SignupPage } from '@pages/SignupPage';
+import { generateRandomUser } from '@utils/helperFunctions';
+import { ContactListPage } from '@pages/ContactListPage';
 
 test('Verify that the account has been created and logged in.', async ({ page }) => {
   const loginPage = new LoginPage(page);
