@@ -28,7 +28,7 @@ test.describe('Delete an existing Contact flow.', () => {
         await contactListPage.contactDetailsRow.click();
         await contactDetailsPage.expectPageToBeVisible();
         await contactDetailsPage.clickDeleteContanctButton();
-        await expect(contactListPage.contactDetailsRow).not.toContainText(testData.contact.firstName);
+        await expect(contactListPage.contactDetailsRow).not.toBeVisible();
     });
 
 });
