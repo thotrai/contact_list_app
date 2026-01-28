@@ -32,7 +32,7 @@ This approach keeps tests fast, stable, and scalable, while still providing conf
 * Create user via API
 * Add contact via API (authenticated with Bearer token)
 
-App API Documentation:
+API Documentation:
 https://documenter.getpostman.com/view/4012288/TzK2bEa8#abe537df-fccc-4ee6-90d2-7513e3024d6b
 
 ### End-to-End Flow
