@@ -9,41 +9,41 @@ The framework follows the **Page Object Model (POM)** and focuses on clean struc
 
 The goal of this project is to validate core user flows of a web application that manages users and contacts.
 It covers:
-* User authentication (signup & login)
-* Contact management (add, view, delete)
-* Error handling and validation
-* End-to-end business flows
+* User authentication (signup & login).
+* Contact management (add, view, delete).
+* Error handling and validation.
+* End-to-end business flows.
 
 To achieve this efficiently, the project uses a hybrid testing approach, where:
-* API calls are used to prepare test data and validate backend behavior
-* UI tests focus on verifying user experience and frontend behavior
-This approach keeps tests fast, stable, and scalable, while still providing confidence in the system as a whole.
+* API calls are used to prepare test data and validate backend behavior.
+* UI tests focus on verifying user experience and frontend behavior.
+This approach keeps tests fast, stable and scalable, while still providing confidence in the system as a whole.
 
 ---
 
 ## 🧪 What’s Covered
 ### UI Automation
-* Signup and login flows
-* Add, view, and delete contacts
-* Logout and re-login validation
-* Unhappy paths (invalid credentials, missing required fields)
+* Signup and login flows.
+* Add, view and delete contacts.
+* Logout and re-login validation.
+* Unhappy paths (invalid credentials, missing required fields).
 
 ### API Automation
-* Create user via API
-* Add contact via API (authenticated with Bearer token)
+* Create user via API.
+* Add contact via API (authenticated with Bearer token).
 
 API Documentation:
 https://documenter.getpostman.com/view/4012288/TzK2bEa8#abe537df-fccc-4ee6-90d2-7513e3024d6b
 
 ### End-to-End Flow
-Complete flow combining: Signup -> Login -> Add contact -> Verify persisted data
+Complete flow combining: Signup -> Login -> Add contact -> Verify persisted data.
 
 ## 🛠 Tech Stack
 > ⚠️ The project was developed and tested using the versions listed below. 
-- **Playwright** `v1.58.0` – UI & API test automation
-- **TypeScript** `v5.9.3` – Strong typing and maintainable code
-- **Node.js** `v22.16.0` – Runtime environment
-- **npm** `v10.9.2` – Dependency management
+- **Playwright** `v1.58.0` – UI & API test automation.
+- **TypeScript** `v5.9.3` – Strong typing and maintainable code.
+- **Node.js** `v22.16.0` – Runtime environment.
+- **npm** `v10.9.2` – Dependency management.
 
 ---
 
@@ -74,7 +74,7 @@ npx playwright show-report
 ```
 ---
 
-## 📁 Project Structure (High Level)
+## 📁 Project Structure 
 ```bash
 ├── tests/
 │   ├── api/          # API tests
@@ -87,10 +87,4 @@ npx playwright show-report
 ├── playwright.config.ts
 └── tsconfig.json
 ```
-
 ---
-
-
-
-
-
