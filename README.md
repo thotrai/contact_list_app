@@ -38,6 +38,8 @@ https://documenter.getpostman.com/view/4012288/TzK2bEa8#abe537df-fccc-4ee6-90d2-
 ### End-to-End Flow
 Complete flow combining: Signup -> Login -> Add contact -> Verify persisted data.
 
+---
+
 ## 🛠 Tech Stack
 > ⚠️ The project was developed and tested using the versions listed below. 
 - **Playwright** `v1.58.0` – UI & API test automation.
